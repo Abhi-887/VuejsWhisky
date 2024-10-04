@@ -1,26 +1,41 @@
 <template>
-  <div id="app">
-    <AppHeader />
-    <HomePage /> <!-- Use the HomePage component here -->
-    <AppFooter />
+  <div class="flex flex-col min-h-screen">
+    <header class="bg-blue-600 text-white p-4">
+      <h1 class="text-3xl text-center">My Vue.js Website</h1>
+      <nav class="mt-2">
+        <ul class="flex justify-center space-x-4">
+          <li>
+            <router-link to="/" class="hover:text-gray-300">Home</router-link>
+          </li>
+          <li>
+            <router-link to="/about" class="hover:text-gray-300">About</router-link>
+          </li>
+          <li>
+            <router-link to="/services" class="hover:text-gray-300">Services</router-link>
+          </li>
+          <li>
+            <router-link to="/contact" class="hover:text-gray-300">Contact</router-link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="flex-grow">
+      <router-view />
+    </main>
+
+    <footer class="bg-blue-600 text-white text-center p-4">
+      <p>&copy; 2024 My Company. All rights reserved.</p>
+    </footer>
   </div>
 </template>
 
 <script>
-import AppHeader from './components/AppHeader.vue'; // Import your header
-import AppFooter from './components/AppFooter.vue'; // Import your footer
-import HomePage from './views/HomePage.vue'; // Import your home page
-
 export default {
   name: 'App',
-  components: {
-    AppHeader,
-    AppFooter,
-    HomePage,
-  },
 };
 </script>
 
 <style>
-/* Global styles can go here */
+/* Global styles can go here if needed */
 </style>
