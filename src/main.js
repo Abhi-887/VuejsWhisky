@@ -1,8 +1,6 @@
-// src/main.js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import App from './App.vue';
-import './assets/styles.css'; // Ensure this path is correct
+import router from './router';
+import './assets/tailwind.css';
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app');
+createApp(App).use(router).mount('#app');
