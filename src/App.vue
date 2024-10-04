@@ -1,15 +1,21 @@
+<!-- src/App.vue -->
 <template>
-  <div class="bg-blue-500 text-white p-4">
-    Hello, Tailwind CSS!
+  <div id="app">
+    <Home />
   </div>
 </template>
 
 <script>
+import Home from './views/Home.vue';
+
 export default {
   name: 'App',
+  components: {
+    Home,
+  },
 };
 </script>
 
-<style scoped>
-/* Add any component-specific styles here */
+<style>
+/* Global styles can go here */
 </style>
