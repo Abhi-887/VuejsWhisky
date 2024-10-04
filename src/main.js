@@ -1,6 +1,7 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import './assets/styles.css'; // adjust the path if necessary
+import Vue from 'vue';
+import App from './App.vue';
+import './assets/styles.css'; // Make sure this path is correct
 
-
-createApp(App).mount('#app')
+new Vue({
+  render: h => h(App),
+}).$mount('#app');
