@@ -1,17 +1,17 @@
 <!-- src/App.vue -->
 <template>
   <div id="app">
-    <Home />
+    <HomePage /> <!-- Updated component name -->
   </div>
 </template>
 
 <script>
-import Home from './views/Home.vue';
+import HomePage from './views/HomePage.vue'; // Update this import
 
 export default {
   name: 'App',
   components: {
-    Home,
+    HomePage, // Updated component name
   },
 };
 </script>
