@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '../views/HomePage.vue';
-import ProductPage from '../views/ProductPage.vue';
+import HomePage from '../views/HomePage.vue'; // Ensure path format consistency
+import LiveAuctionPage from '../views/LiveAuctionPage.vue'; // Correctly import the LiveAuctionPage
+import AuctionPage from '../views/AuctionPage.vue';
+import ProductDetailPage from '../views/ProductDetailPage.vue'; // Ensure ProductDetailPage is imported
 
 const routes = [
   {
@@ -9,9 +11,20 @@ const routes = [
     component: HomePage,
   },
   {
-    path: '/products',
-    name: 'Product',
-    component: ProductPage,
+    path: '/live-auction', // Consistent lowercase path
+    name: 'LiveAuction',
+    component: LiveAuctionPage,
+  },
+  {
+    path: '/auctions', // Consistent lowercase path
+    name: 'Auction',
+    component: AuctionPage,
+  },
+  {
+    path: '/product/:id', // Dynamic route for product details
+    name: 'ProductDetail',
+    component: ProductDetailPage,
+    props: true, // Allows route params to be passed as props to the component
   },
 ];
 

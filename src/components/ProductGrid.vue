@@ -1,30 +1,33 @@
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    <ProductCard
+    <div
       v-for="product in products"
       :key="product.id"
-      :product="product"
-    />
+      class="bg-white rounded shadow p-4 cursor-pointer hover:shadow-lg"
+      @click="goToProductDetail(product.id)"
+    >
+      <img :src="product.image" alt="Product Image" class="w-full h-48 object-cover mb-4" />
+      <h2 class="text-xl font-semibold">{{ product.title }}</h2>
+      <p class="text-lg text-gray-700">${{ product.price.toFixed(2) }}</p>
+    </div>
   </div>
 </template>
 
 <script>
-import ProductCard from './ProductCard.vue';
-
 export default {
   name: 'ProductGrid',
-  components: {
-    ProductCard,
-  },
   props: {
-    products: {
-      type: Array,
-      required: true,
+    products: Array,
+  },
+  methods: {
+    goToProductDetail(productId) {
+      // Use Vue Router to navigate to the product detail page
+      this.$router.push({ name: 'ProductDetail', params: { id: productId } });
     },
   },
 };
 </script>
 
 <style scoped>
-/* Add any styles specific to ProductGrid here */
+/* Add any additional styling here */
 </style>
